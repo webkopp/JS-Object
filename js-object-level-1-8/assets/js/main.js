@@ -27,3 +27,11 @@ let studentData = [
         emails: ["sandra@gmail.com", "sandra@yahoo.com"]
     }
 ]
+console.log(studentData)
+
+studentData.forEach((el) => {
+    console.log(el.name)
+    console.log(el.coop)
+    console.log(el.address.city)
+    console.log(el.emails)
+})

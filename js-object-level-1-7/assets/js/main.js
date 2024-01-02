@@ -34,3 +34,12 @@ let myMusic = [
         gold: true
     }
 ]
+
+myMusic.forEach((music) => {
+    if (music.release_year < 1975) {
+    document.write( `${music.artist} <br/> ${music.title} <br/> ${music.medium} <br/> <br/>` )
+    } else {
+        document.write( `${music.artist} <br/> ${music.title} <br/> ${music.medium} <br/> ${music.release_year} <br/> <br/>` )
+    }
+    }
+)

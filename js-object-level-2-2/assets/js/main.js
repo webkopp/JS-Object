@@ -17,3 +17,12 @@ const singers = [
     { name: 'Rihanna', country: 'United States', period_active: { start: 2005, end: "present" }, genre: "R&B / Pop / Dance / Hip-hop" },
     { name: 'Pink Floyd', country: 'United Kingdom', period_active: { start: 1965, end: 1996, extra: 2014 }, genre: "Progressive rock / Psychedelic rock" },
 ]
+
+console.log(singers.sort((a, b) => {
+    if(a.name > b.name) {
+        return 1
+    }
+    else {
+        return -1
+    }
+}))
