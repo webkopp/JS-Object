@@ -14,8 +14,11 @@ let person = {
     familienstand: 'ledig',
     groesse: '178cm',
     profil: function () {
-        return this...;
+        return `<p>Name: ${this.vorname} ${this.nachname}</p>
+        <p>Alter: ${this.alter} Jahre</p>
+        <p>Familienstand: ${this.familienstand}</p>
+        <p>Körpergröße: ${this.groesse}</p>`
 }
-};
+}
 //gib das Profil von Anton mit diesem Code im Element mit der "person" aus.
-document.getElementById("person").innerHTML = person.profil();
+document.getElementById("person").innerHTML = person.profil()

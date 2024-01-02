@@ -3,9 +3,13 @@
 // - Was wird dir angezeigt, wenn du mit this fahrrad(), obj1.fahrrad() und obj2.fahrrad() aufrufst?
 
 function fahrrad() {
-    console.log(this.name);
+    console.log(this.name)
 }
 
-let name = "Canyon";
-let obj1 = { name: "Merida", fahrrad: fahrrad };
-let obj2 = { name: "Scott", fahrrad: fahrrad };
+let name = "Canyon"
+let obj1 = { name: "Merida", fahrrad: fahrrad }
+let obj2 = { name: "Scott", fahrrad: fahrrad }
+
+this.fahrrad() // NICHTS
+obj1.fahrrad() // Merinda
+obj2.fahrrad() // Scott
