@@ -25,5 +25,6 @@ const headerRow = `<tr>${headers.map(header => `<th>${header}</th>`).join("")}</
 // Tabellenzeilen
 const rows = data.map(row => {
     const values = Object.values(row)
-    
+    return `<tr>${values.map(value => `<td>${value}</td>`).join("")}</tr>
+
 })
