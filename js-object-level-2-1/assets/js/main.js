@@ -11,7 +11,6 @@
 // - Was fällt auf, wenn du beide Methoden vergleichst und auf push() verzichtest?
 // - Gib alles als Tabelle in deinem HTML-Dokument aus.
 
-
 let edelMetallPreise = [
     { name: "Gold", preiseGramEuro: 42.91, veraenderung: "+0.12%" },
     { name: "Silber", preiseGramEuro: 0.51, veraenderung: "+1.02%" },
@@ -23,3 +22,33 @@ let edelMetallPreise = [
     { name: "Rhenium", preiseGramEuro: 37.22, veraenderung: "-0.53%" },
     { name: "Osmium", preiseGramEuro: 11.54, veraenderung: "0.00%" }
 ]
+
+let namesArray = []
+    edelMetallPreise.forEach((metall) => {
+    namesArray.push(metall.name)
+})
+
+console.log(namesArray)
+
+// const metallName = edelMetallPreise.forEach((name) => {
+//     return name
+// })
+
+// console.log(metallName)
+
+// const products = [
+//     { id: 1, name: 'Laptop', price: 1200 },
+//     { id: 2, name: 'Phone', price: 800 },
+//     { id: 3, name: 'Tablet', price: 500 }
+// ];
+
+
+// console.log(products);
+
+// const priceArray = products.map((el) => {
+//     // ! Bitte nicht console.log verwenden
+//     // ! console.log(`Product: ${el.name} Price: ${el.price}`);
+//     return `Product: ${el.name} Price: ${el.price}`
+// })
+
+// console.log(priceArray);
