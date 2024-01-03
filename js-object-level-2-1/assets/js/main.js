@@ -35,23 +35,10 @@ console.log(namesArray)
 let namesMap = edelMetallPreise.map((metall) => metall.name)
 console.log(namesMap)
 
+// verwende forEach() und greife auf alle preise/gram zu + push in neues Array
+let priceArray = []
+    edelMetallPreise.forEach((preis) => {
+    priceArray.push(preis.preiseGramEuro)
+})
 
-
-// console.log(metallName)
-
-// const products = [
-//     { id: 1, name: 'Laptop', price: 1200 },
-//     { id: 2, name: 'Phone', price: 800 },
-//     { id: 3, name: 'Tablet', price: 500 }
-// ];
-
-
-// console.log(products);
-
-// const priceArray = products.map((el) => {
-//     // ! Bitte nicht console.log verwenden
-//     // ! console.log(`Product: ${el.name} Price: ${el.price}`);
-//     return `Product: ${el.name} Price: ${el.price}`
-// })
-
-// console.log(priceArray);
+console.log(priceArray)
