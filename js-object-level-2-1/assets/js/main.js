@@ -23,6 +23,7 @@ let edelMetallPreise = [
     { name: "Osmium", preiseGramEuro: 11.54, veraenderung: "0.00%" }
 ]
 
+// verwende forEach() und greife auf alle Namen zu + push in neues Array
 let namesArray = []
     edelMetallPreise.forEach((metall) => {
     namesArray.push(metall.name)
@@ -30,9 +31,11 @@ let namesArray = []
 
 console.log(namesArray)
 
-// const metallName = edelMetallPreise.forEach((name) => {
-//     return name
-// })
+// verwende map() und greife auf alle Namen zu
+let namesMap = edelMetallPreise.map((metall) => metall.name)
+console.log(namesMap)
+
+
 
 // console.log(metallName)
 
