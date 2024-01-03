@@ -17,3 +17,13 @@ const singers = [
     { name: 'Rihanna', country: 'United States', period_active: { start: 2005, end: "present" }, genre: "R&B / Pop / Dance / Hip-hop" },
     { name: 'Pink Floyd', country: 'United Kingdom', period_active: { start: 1965, end: 1996, extra: 2014 }, genre: "Progressive rock / Psychedelic rock" },
 ]
+
+// Tabelle erstellen
+const headers = Object.keys(data[0])
+const headerRow = `<tr>${headers.map(header => `<th>${header}</th>`).join("")}</tr>`
+
+// Tabellenzeilen
+const rows = data.map(row => {
+    const values = Object.values(row)
+    
+})
