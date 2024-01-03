@@ -62,3 +62,18 @@ console.log(changeMap)
 // verwende filter() und greife auf preise/gram um die die teurer als 50Euro sind zu filtern
 let highPrices = edelMetallPreise.filter((preis) => preis.preiseGramEuro > 0.5)
 console.log(highPrices)
+
+// gib alles als Tabelle im HTML aus
+edelMetallPreise.forEach((metall) => {
+    document.write(`<tr><td>${metall.name}</td><td>${preis.preiseGramEuro}</td><td>${anders.veraenderung}</td></tr>`)
+})
+// edelMetallPreise.forEach((metall) => {
+//     const table = document.getElementById("metallTable'")
+//     const row = table.insertRow(-1)
+//     const cell1 = row.insertCell(0)
+//     const cell2 = row.insertCell(1)
+//     const cell3 = row.insertCell(2)
+//     cell1.innerHTML = metall.name
+//     cell2.innerHTML = preis.preiseGramEuro
+//     cell3.innerHTML = anders.veraenderung
+// })
