@@ -58,3 +58,7 @@ console.log(changeArray)
 // verwende map() und greife auf alle preise/gram zu
 let changeMap = edelMetallPreise.map((anders) => anders.veraenderung)
 console.log(changeMap)
+
+// verwende filter() und greife auf preise/gram um die die teurer als 50Euro sind zu filtern
+let highPrices = edelMetallPreise.filter((preis) => preis.preiseGramEuro > 0.5)
+console.log(highPrices)
