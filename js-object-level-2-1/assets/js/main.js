@@ -46,3 +46,15 @@ console.log(priceArray)
 // verwende map() und greife auf alle preise/gram zu
 let priceMap = edelMetallPreise.map((preis) => preis.preiseGramEuro)
 console.log(priceMap)
+
+// verwende forEach() und greife auf alle veraenderungen zu + push in neues Array
+let changeArray = []
+    edelMetallPreise.forEach((anders) => {
+    changeArray.push(anders.veraenderung)
+})
+
+console.log(changeArray)
+
+// verwende map() und greife auf alle preise/gram zu
+let changeMap = edelMetallPreise.map((anders) => anders.veraenderung)
+console.log(changeMap)
