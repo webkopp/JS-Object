@@ -42,3 +42,7 @@ let priceArray = []
 })
 
 console.log(priceArray)
+
+// verwende map() und greife auf alle preise/gram zu
+let priceMap = edelMetallPreise.map((preis) => preis.preiseGramEuro)
+console.log(priceMap)
