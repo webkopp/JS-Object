@@ -18,13 +18,41 @@ const singers = [
     { name: 'Pink Floyd', country: 'United Kingdom', period_active: { start: 1965, end: 1996, extra: 2014 }, genre: "Progressive rock / Psychedelic rock" },
 ]
 
-// Tabelle erstellen
-const headers = Object.keys(data[0])
-const headerRow = `<tr>${headers.map(header => `<th>${header}</th>`).join("")}</tr>`
+const tableContainer = document.getElementById("table-container")
 
-// Tabellenzeilen
-const rows = data.map(row => {
-    const values = Object.values(row)
-    return `<tr>${values.map(value => `<td>${value}</td>`).join("")}</tr>
+const table = document.createElement("table")
 
+const headerRow = table.createTHead().insertRow()
+for (const key in singers[0]) {
+  const th = document.createElement("th")
+  th.textContent = key.charAt(0).toUpperCase() + key.slice(1)
+  headerRow.appendChild(th)
+}
+
+const tbody = table.createTBody()
+singers.forEach((singer) => {
+  const row = tbody.insertRow()
+  for (const key in singer) {
+    const cell = row.insertCell()
+    if (key === "period_active") {
+      const periodActive = singer[key]
+      const periodString = `${periodActive.start} - ${periodActive.end}`
+      cell.textContent = periodString;
+    } else {
+      cell.textContent = singer[key]
+    }
+  }
 })
+
+tableContainer.appendChild(table)
+
+// // Tabelle erstellen
+// const headers = Object.keys(data[0])
+// const headerRow = `<tr>${headers.map(header => `<th>${header}</th>`).join("")}</tr>`
+
+// // Tabellenzeilen
+// const rows = data.map(row => {
+//     const values = Object.values(row)
+//     return `<tr>${values.map(value => `<td>${value}</td>`).join("")}</tr>
+
+// })
