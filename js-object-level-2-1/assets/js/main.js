@@ -28,7 +28,6 @@ let namesArray = []
     edelMetallPreise.forEach((metall) => {
     namesArray.push(metall.name)
 })
-
 console.log(namesArray)
 
 // verwende map() und greife auf alle Namen zu
@@ -40,7 +39,6 @@ let priceArray = []
     edelMetallPreise.forEach((preis) => {
     priceArray.push(preis.preiseGramEuro)
 })
-
 console.log(priceArray)
 
 // verwende map() und greife auf alle preise/gram zu
@@ -52,28 +50,84 @@ let changeArray = []
     edelMetallPreise.forEach((anders) => {
     changeArray.push(anders.veraenderung)
 })
-
 console.log(changeArray)
 
-// verwende map() und greife auf alle preise/gram zu
+// verwende map() und greife auf alle veraenderungen zu
 let changeMap = edelMetallPreise.map((anders) => anders.veraenderung)
 console.log(changeMap)
 
 // verwende filter() und greife auf preise/gram um die die teurer als 50Euro sind zu filtern
-let highPrices = edelMetallPreise.filter((preis) => preis.preiseGramEuro > 0.5)
+let highPrices = edelMetallPreise.filter((preis) => preis.preiseGramEuro > 50)
 console.log(highPrices)
 
+
 // gib alles als Tabelle im HTML aus
-edelMetallPreise.forEach((metall) => {
-    document.write(`<tr><td>${metall.name}</td><td>${preis.preiseGramEuro}</td><td>${anders.veraenderung}</td></tr>`)
-})
+let table = document.getElementById("table")
+for (let metall of edelMetallPreise) {
+    let tr = document.createElement("tr")
+
+    let td1 = document.createElement("td")
+    td1.textContent = metall.name
+    tr.appendChild(td1)
+
+    let td2 = document.createElement("td")
+    td2.textContent = metall.preiseGramEuro
+    tr.appendChild(td2)
+
+    let td3 = document.createElement("td")
+    td3.textContent = metall.veraenderung
+    tr.appendChild(td3)
+
+    table.appendChild(tr)
+}
+
+// versionTest1
 // edelMetallPreise.forEach((metall) => {
-//     const table = document.getElementById("metallTable'")
-//     const row = table.insertRow(-1)
-//     const cell1 = row.insertCell(0)
-//     const cell2 = row.insertCell(1)
-//     const cell3 = row.insertCell(2)
-//     cell1.innerHTML = metall.name
-//     cell2.innerHTML = preis.preiseGramEuro
-//     cell3.innerHTML = anders.veraenderung
+//     document.write(`<tr><td>${metall.name}</td><td>${metall.preiseGramEuro}</td><td>${metall.veraenderung}</td></tr>`)
 // })
+
+
+// version2
+// document.write("<center><table border='2' width='50%'>");
+// document.write(`<tr>`);
+// document.write("<td>" + "Name" + "</td>" + "<td>" + "PreisGramEuro" + "</td>"+"<td>" + "Veränderung" + "</td>")
+// document.write("</tr>");
+// document.write("<tr>");
+// for(let i = 0; i < mapName.length; i++){
+//     document.write("<td>" + mapName[i] + "</td>")
+//     document.write("<td>" + mapPrice[i] + "</td>")
+//     document.write("<td>" + mapChanges[i] + "</td>")
+//     document.write("</tr>")
+// }
+// document.write("</table></center>");
+
+// version3
+// let table = document.createElement('table');
+// let thead = document.createElement('thead');
+// let tbody = document.createElement('tbody');
+
+// document.querySelector('body').appendChild(table);
+
+// table.appendChild(thead);
+// table.appendChild(tbody);
+
+// let row_1 = document.createElement('tr')
+// let heading_1 = document.createElement('th')
+// heading_1.innerHTML = 'name'
+// let heading_2 = document.createElement('th')
+// heading_2.innerHTML = 'preiseGramEuro'
+// let heading_3 = document.createElement('th')
+// heading_3.innerHTML = 'veraenderung'
+
+
+// row_1.appendChild(heading_1);
+// row_1.appendChild(heading_2);
+// row_1.appendChild(heading_3);
+// tbody.appendChild(row_1);
+
+
+// for (let i = 0; i<mapName.length; i++){
+//     let rowStart = document.createElement('tr')
+//     rowStart.innerHTML = `<th>${mapName[i]}</th> <th>${mapPrice[i]}</th> <th>${mapChanges[i]}</th> `
+//     tbody.appendChild(rowStart)
+// }
